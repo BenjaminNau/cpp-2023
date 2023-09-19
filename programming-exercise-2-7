@@ -1,0 +1,11 @@
+// Write a program that prompts the user to input the decimal value of a double and outputs the number rounded to the nearest integer.
+
+#include <iostream>
+using namespace std;
+int main() {
+    double deci;
+    cout << "Input a decimal value: " << endl;
+    cin >> deci;
+    cout << static_cast<int>(deci + 0.5) << endl;
+    return 0;
+}
