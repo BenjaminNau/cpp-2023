@@ -1,0 +1,23 @@
+/*
+ Write a program that prompts the user to enter five test scores and then prints the average test score. Indicate the average test score by printing it to the terminal using the following format:
+
+ Your average test score is: X
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double testOne, testTwo, testThree, testFour, testFive;
+    double average;
+
+    cout << "enter five test scores:" << endl;
+    cin >> testOne >> testTwo >> testThree >> testFour >> testFive;
+
+    average = (testOne + testTwo + testThree + testFour 
+    + testFive) / 5;
+    
+    cout << "Your average test score is : " << average; 
+    return 0;
+}
