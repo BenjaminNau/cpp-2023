@@ -1,11 +1,13 @@
-// Write a program that produces the following output:
+/*
+ Write a program that produces the following output:
 
-// CCCCCCCCC       ++              ++
-// CC              ++              ++
-// CC        ++++++++++++++  +++++++++++++++
-// CC        ++++++++++++++  +++++++++++++++
-// CC              ++              ++
-// CCCCCCCCC       ++              ++
+ CCCCCCCCC       ++              ++
+ CC              ++              ++
+ CC        ++++++++++++++  +++++++++++++++
+ CC        ++++++++++++++  +++++++++++++++
+ CC              ++              ++
+ CCCCCCCCC       ++              ++
+*/
 
 #include <iostream>
 
