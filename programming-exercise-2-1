@@ -1,17 +1,17 @@
 /* 
- Write a program that produces the following output:
+Write a program that produces the following output:
 
- **********************************
+**********************************
 
- *    Programming Assignment 1    *
+*    Programming Assignment 1    *
 
- *     Computer Programming I     *
+*     Computer Programming I     *
 
- *           Author: ???          *
+*           Author: ???          *
 
- *   Due Date: Thursday, Jan. 24  *
+*   Due Date: Thursday, Jan. 24  *
 
- **********************************
+**********************************
 */
 
 #include <iostream>
