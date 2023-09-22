@@ -1,0 +1,22 @@
+/*
+Write a program that :
+
+Prompts the capacity, in gallons, of an automobile fuel tank and the miles per gallon the automobile can be driven.
+Output the number of miles the automobile can be driven without refueling.
+*/
+#include <iostream>
+
+using namespace std;                                   
+ 
+int main()
+{
+    double capacity, mpg; // initializing
+
+    cout << "what is the capacity and mpg of the car" << endl; // user prompt
+
+    cin >> capacity >> mpg; // accepts two inputs, capacity and miles per gallon
+
+    cout << "the number of miles that can be driven without refueling is " << capacity * mpg << endl; // capacity * mpg will output the number of miles that can be driven w/out refueling
+    
+    return 0;
+}
