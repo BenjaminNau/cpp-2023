@@ -1,7 +1,7 @@
 /*
- Write a program that prompts the user to enter five test scores and then prints the average test score. Indicate the average test score by printing it to the terminal using the following format:
+Write a program that prompts the user to enter five test scores and then prints the average test score. Indicate the average test score by printing it to the terminal using the following format:
 
- Your average test score is: X
+Your average test score is: X
 */
 
 #include <iostream>
