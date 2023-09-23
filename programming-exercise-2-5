@@ -1,38 +1,40 @@
-// Consider the following C++ program in which the statements are in the incorrect order.
+/*
+Consider the following C++ program in which the statements are in the incorrect order.
 
-// Rearrange the statements so that it prompts the user to input the radius of a circle and outputs the area and circumference of the circle.
+Rearrange the statements so that it prompts the user to input the radius of a circle and outputs the area and circumference of the circle.
 
-// #include <iostream>
+#include <iostream>
  
-// {
+{
  
-// int main()
+int main()
  
-// cout << "Enter the radius: ";
+cout << "Enter the radius: ";
  
-// cin >> radius;
+cin >> radius;
  
-// cout << endl;
+cout << endl;
  
-// double radius;
-// double area;
+double radius;
+double area;
  
-// using namespace std;
+using namespace std;
  
-// return 0;
+return 0;
  
-// cout << "Area = " << area << endl;
+cout << "Area = " << area << endl;
  
-// area = PI * radius * radius;
+area = PI * radius * radius;
  
-// circumference = 2 * PI * radius;
+circumference = 2 * PI * radius;
  
-// cout << "Circumference = " << circumference << endl;
+cout << "Circumference = " << circumference << endl;
  
-// const double PI = 3.14;
+const double PI = 3.14;
  
-// double circumference;
-// }
+double circumference;
+}
+*/
 
 #include <iostream>
 using namespace std;
