@@ -1,0 +1,52 @@
+/*
+To make a profit, a local store marks up the prices of its items by a certain percentage.
+
+Write a C++ program that reads:
+
+The original price of the item sold
+The percentage of the marked-up price
+The sales tax rate.
+The program then outputs:
+
+The original price of the item
+The percentage of the mark-up
+The store’s selling price of the item
+The sales tax rate
+The sales tax
+The final price of the item.
+(The final price of the item is the selling price plus the sales tax.)
+Since your program handles currency, make sure to use a data type that can store decimals.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double original = 0, markup = 0, taxPercent = 0, retailPrice = 0, taxAmount = 0, finalPrice = 0;
+
+    cout << "Enter original price $" << endl;
+    cin >> original;
+
+    cout << "Enter percentage of markup:" << endl;
+    cin >> markup;
+
+    cout << "Enter percentage of sales tax:" << endl;
+    cin >> taxPercent;
+
+    retailPrice = original + (original * markup / 100); // remember the markup is a percentage (decimal) value
+    taxAmount = retailPrice * taxPercent / 100; // shows the sales tax rate (as a percentage)
+    finalPrice = retailPrice + taxAmount;
+
+    // Display the results
+    cout << "original price: $" << original << endl;
+    cout << "percentage of markup is " << markup << "%" << endl;
+    cout << "selling price is $" << retailPrice << endl;
+    cout << "sales tax rate is " << taxPercent << "%" << endl;
+    cout << "amount of sales tax for the item is $" << taxAmount << endl;
+    cout << "final price of the item is $" << finalPrice << endl;
+    /*
+    update code to use a setprecision of 2
+    */
+    return 0;
+}
