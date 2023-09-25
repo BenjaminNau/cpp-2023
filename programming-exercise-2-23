@@ -1,0 +1,69 @@
+/*
+Cindy uses the services of a brokerage firm to buy and sell stocks. The firm charges 1.5% service charges on the total amount for each transaction, buy or sell. When Cindy sells stocks, she would like to know if she gained or lost on a particular investment.
+
+Instructions
+Write a program that allows Cindy to input:
+
+The purchase price of each share
+The selling price of each share
+The number of shares sold
+The program outputs:
+
+The total amount invested
+The total amount received from selling
+The total service charges
+Amount gained or lost
+An example program is shown below:
+
+Enter the buying price of each share: 13.23
+
+Enter the selling price of each share: 14.00
+
+Enter the number of shares sold: 43
+
+Total amount invested: $ 577.423
+Total amount received: $ 592.97
+Total service charges: $ 17.5633
+Amount gained or lost: $15.5466
+Since your program handles currency, make sure to use a data type that can store decimals.
+*/
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // declare variables
+
+    double serviceCharges = 0.015;
+
+    double purchasePrice;
+    cout << "The purchase price of each share:";
+    cin >> purchasePrice;
+
+    double sellingPrice;
+    cout << "The selling price of each share:" ;
+    cin >> sellingPrice;
+
+    int sharesSold;
+    cout << "The number of shares sold:";
+    cin >> sharesSold;
+
+    //calculations
+
+    double saleFee = (sharesSold * sellingPrice) * serviceCharges;
+    double totalReceived = (sharesSold * sellingPrice) - saleFee;
+
+    double purchaseFee = (sharesSold * purchasePrice) * serviceCharges;
+    double totalInvested = (sharesSold * purchasePrice) +  purchaseFee ;
+
+    double netOut = (totalReceived - totalInvested);
+    double totalCharges = saleFee + purchaseFee;
+
+    //outputs
+
+    cout << "Total amount invested: $ " << totalInvested << endl;
+    cout << "Total amount received: $ " << totalReceived << endl;
+    cout << "Total service charges: $ " << totalCharges << endl;
+    cout << "Amount gained or lost: $ " << netOut << endl;
+    return 0;
+}
