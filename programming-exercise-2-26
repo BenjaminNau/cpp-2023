@@ -1,0 +1,63 @@
+/*
+Instructions
+A room has one door, two windows, and a built-in bookshelf and it needs to be painted. Suppose that one gallon of paint can paint 120 square feet.
+
+Write a program that prompts the user to input the length and width (in feet) of:
+
+The door
+Each window
+The bookshelf
+And the length, width, and height of the room.
+The program outputs:
+
+The amount of paint needed to paint the walls of the room.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // declare variables
+    
+    double doorLength, doorWidth, windowLengthOne, windowWidthOne, windowLengthTwo, windowWidthTwo,bookshelfLength, 
+    bookshelfWidth, roomLength, roomWidth, roomHeight, doorArea, windowOneArea, windowTwoArea, bookshelfArea, 
+    roomArea, subtractArea, totalArea, paintNeeded; // change this to multiple lines, for readability 
+
+    cout << "length and width of door:";
+    cin >> doorLength >> doorWidth;
+    cout << endl;
+
+    cout << "length and width of window one:";
+    cin >> windowLengthOne >> windowWidthOne;
+    cout << endl;
+
+    cout << "length and width of window two:";
+    cin >> windowLengthTwo >> windowWidthTwo;
+    cout << endl;
+
+    cout << "length and width of bookshelf:";
+    cin >> bookshelfLength >> bookshelfWidth;
+    cout << endl;
+
+    cout << "Enter length, width and height of the room:";
+    cin >> roomLength >> roomWidth >> roomHeight;
+    cout << endl;
+
+    // calculations
+    
+    doorArea = doorLength * doorWidth;
+    windowOneArea = windowLengthOne * windowWidthOne;
+    windowTwoArea = windowLengthTwo * windowWidthTwo;
+    bookshelfArea = bookshelfLength * bookshelfWidth;
+    roomArea = ((2 * roomLength) + (2 * roomWidth)) * roomHeight;
+    subtractArea = doorArea + windowOneArea + windowTwoArea + bookshelfArea;
+    totalArea = roomArea - subtractArea;
+    paintNeeded = totalArea / 120.0;
+
+    // outputs
+
+    cout << "paint needed: " << paintNeeded << endl;
+
+    return 0; 
+}
