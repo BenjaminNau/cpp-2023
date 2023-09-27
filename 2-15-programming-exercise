@@ -1,0 +1,42 @@
+/*
+Write a program to implement and test the algorithm that you designed for Exercise 15 of Chapter 1. The instructions to Exercise 15 have been posted below for your convenience:
+
+Exercise 15
+Given the radius, in inches, and price of a pizza, design an algorithm to find the price of the pizza per square inch.
+
+You may assume that the value of π = 3.141593.
+
+In your program, declare a named constant PI to store this value.
+
+Below is an example of how the completed program should work:
+
+Enter the radius of the pizza: 20
+
+Enter the price of the pizza: 22
+
+The price per square inch is: 0.017507
+Since your program handles currency, make sure to use a data type that can store decimals.
+*/
+
+#include <iostream>
+#include <cmath> // needed for pow()
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    
+    float radius, priceOfPizza, pricePerSquareInch;
+    const float PI = 3.141593;
+
+    cout << "What is the radius, in inches, and the price of the pizza: " << endl;
+    cin >> radius >> priceOfPizza;
+
+
+    pricePerSquareInch = priceOfPizza / (PI * (pow(radius, 2))); // price / area, area = pi*r^2
+
+    cout << "The price per square inch is $" << fixed << setprecision(3)
+    << pricePerSquareInch  << endl; // 3 decimal places to get the desired output
+
+    return 0;
+}
