@@ -1,0 +1,51 @@
+/*
+A milk carton can hold 3.78 liters of milk. Each morning, a dairy farm ships cartons of milk to a local grocery store. The cost of producing one liter of milk is $0.38, and the profit of each carton of milk is $0.27.
+
+Write a program that prompts the user to enter:
+
+The total amount of milk produced in the morning.
+The program then outputs:
+
+The number of milk cartons needed to hold milk.
+
+Round your answer to the nearest integer.
+The cost of producing milk.
+
+The profit for producing milk.
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    float milkProduced;
+    const float cartonCapacity = 3.78; // Using a constant for carton capacity
+
+    const float cartonCostPerLiter = 0.38; 
+    const float cartonProfitPerCarton = 0.27;
+
+    cout << "What is the total amount of milk produced in the morning (in liters)? ";
+    cin >> milkProduced;
+
+    // Calculate the number of cartons needed (rounded to the nearest integer)
+    int cartonNeeded = static_cast<int>(round(milkProduced / cartonCapacity));
+
+    // Calculate the cost for all the milk produced
+    float cartonCost = milkProduced * cartonCostPerLiter;
+
+    cout << "The number of milk cartons needed to hold milk is " << cartonNeeded 
+         << "\nThe cost of producing milk is $" << fixed << setprecision(2) << cartonCost 
+         << " The profit for producing milk is $" << fixed << setprecision(2) << cartonNeeded * cartonProfitPerCarton << endl;
+
+
+    return 0;
+}
+
+/*
+- the profit should be calculated by multiplying the number of cartons needed by the profit per carton
+- make sure to include cmath and setprecision
+- make sure the spacing for the output is correct
+*/
