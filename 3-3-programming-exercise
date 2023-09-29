@@ -1,0 +1,22 @@
+/*
+Write a program that prompts the user to enter the weight of a person in kilograms and outputs the equivalent weight in pounds (Note that 1 kilogram equals 2.2 pounds). Format your output with two decimal places.
+*/
+
+#include <iostream>
+#include <iomanip> // for setprecision
+using namespace std;
+
+int main() {
+    double kilograms;
+
+    cout << "enter the weight of a person in kilograms ";
+    cin >> kilograms;
+
+    double pounds = kilograms * 2.2;
+    
+    cout << fixed << setprecision(2); // decimal set to 2 places
+    
+    cout << kilograms << " kilograms is equal to " << pounds << " pounds." << endl;
+
+    return 0;
+}
