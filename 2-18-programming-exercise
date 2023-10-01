@@ -97,3 +97,6 @@ int main() {
 
     return 0;
 }
+/*
+for both the online grader and real-world financial applications, avoid using float
+*/
