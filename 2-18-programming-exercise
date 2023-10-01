@@ -1,10 +1,12 @@
 /*
+Summary
 You found an exciting summer job for five weeks. It pays, say, $15.50 per hour. Suppose that the total tax you pay on your summer job income is 14%.
 
 After paying the taxes, you spend 10% of your net income to buy new clothes and other accessories for the next school year and 1% to buy school supplies.
 
 After buying clothes and school supplies, you use 25% of the remaining money to buy savings bonds. For each dollar you spend to buy savings bonds, your parents spend $0.50 to buy additional savings bonds for you.
 
+Instructions
 Write a program that prompts the user to enter:
 
 The pay rate for an hour and the number of hours you worked each week for 5 weeks.
@@ -47,14 +49,51 @@ Money spent by parents to buy additional savings bonds: $ 172.024
 using namespace std;
 
 int main() {
-    float hourlyRate, totalHoursFiveWeeks;
-
-    cout << "What is the hourly pay rate and how many 
-    hours did you work each week";
-
-    cin >> hourlyRate >> totalHoursFiveWeeks;
-
-
+    float hourlyRate;
+    float hoursWeek1, hoursWeek2, hoursWeek3, hoursWeek4, hoursWeek5;
     
+    // constants are usually written in all caps
+    const double TAX_RATE = 0.14; 
+    const double CLOTHES_PERCENTAGE = 0.10;
+    const double SUPPLIES_PERCENTAGE = 0.01;
+    const double SAVINGS_BOND_PERCENTAGE = 0.25;
+    const double PARENT_CONTRIBUTION = 0.50;
+
+    // user prompt
+    cout << "Enter the per hour pay rate: ";
+    cin >> hourlyRate;
+
+    cout << "Enter the number of hours worked for week 1: ";
+    cin >> hoursWeek1;
+
+    cout << "Enter the number of hours worked for week 2: ";
+    cin >> hoursWeek2;
+
+    cout << "Enter the number of hours worked for week 3: ";
+    cin >> hoursWeek3;
+
+    cout << "Enter the number of hours worked for week 4: ";
+    cin >> hoursWeek4;
+
+    cout << "Enter the number of hours worked for week 5: ";
+    cin >> hoursWeek5;
+
+    // declaring and calculations
+    double totalHours = hoursWeek1 + hoursWeek2 + hoursWeek3 + hoursWeek4 + hoursWeek5;
+    double totalIncome = hourlyRate * totalHours;
+    double netIncome = totalIncome * (1 - TAX_RATE);
+    double moneyOnClothes = netIncome * CLOTHES_PERCENTAGE;
+    double moneyOnSupplies = netIncome * SUPPLIES_PERCENTAGE;
+    double remainingMoney = netIncome - (moneyOnClothes + moneyOnSupplies);
+    double savingsBonds = remainingMoney * SAVINGS_BOND_PERCENTAGE;
+    double parentContribution = savingsBonds * PARENT_CONTRIBUTION;
+
+    cout << "Total Income before tax: $ " << totalIncome << endl;
+    cout << "Net Income: $ " << netIncome << endl;
+    cout << "Money spent on clothes and other accessories: $ " << moneyOnClothes << endl;
+    cout << "Money spent on school supplies: $ " << moneyOnSupplies << endl;
+    cout << "Money spent to buy savings bonds: $ " << savingsBonds << endl;
+    cout << "Money spent by parents to buy additional savings bonds: $ " << parentContribution << endl;
+
     return 0;
 }
