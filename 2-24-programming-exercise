@@ -1,0 +1,43 @@
+/*
+A piece of wire is to be bent in the form of a rectangle to put around a picture frame. The length of the picture frame is 1.5 times the width.
+
+Write a program that prompts the user to input:
+
+The length of the wire
+The program then outputs:
+
+The length and width of the picture frame.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double lengthOfWire;
+
+    cout << "what is the length of the wire? ";
+    cin >> lengthOfWire;
+
+    double width = lengthOfWire / 5;
+    double length = 1.5 * width;
+
+    cout << "the length and the width of the wire picture frame is " << length << ", " << width;
+    return 0;
+}
+
+/*
+To understand this problem further, use the perimeter equation.
+
+The equation for finding perimeter(lengthOfWire) is as follows:
+P = 2L + 2W
+
+We know:
+L = 1.5W
+
+Substitute:
+
+P = 2(1.5W) + 2W
+
+We have P in respect to W, so we can solve for W, solving, we get P = P/5
+*/
