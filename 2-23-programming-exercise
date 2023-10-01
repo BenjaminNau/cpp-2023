@@ -37,15 +37,15 @@ int main() {
     double serviceCharges = 0.015;
 
     double purchasePrice;
-    cout << "The purchase price of each share:";
+    cout << "The purchase price of each share: ";
     cin >> purchasePrice;
 
     double sellingPrice;
-    cout << "The selling price of each share:" ;
+    cout << "The selling price of each share: " ;
     cin >> sellingPrice;
 
     int sharesSold;
-    cout << "The number of shares sold:";
+    cout << "The number of shares sold: ";
     cin >> sharesSold;
 
     //calculations
