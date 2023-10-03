@@ -1,0 +1,29 @@
+/*
+For each used car a salesperson sells, the commission is paid as follows: $20 plus 30% of the selling price in excess of the cost of the car.
+
+Typically, the minimum selling price of the car is the cost of the car plus $200 and the maximum selling price is the cost of the car and $2,000.
+
+Instructions
+Write a program that prompts the user to enter:
+
+Purchasing cost of the car
+The minimum to be added to the purchasing cost
+The maximum to be added to the purchasing cost
+Salesperson’s fixed commission
+Percentage of the commission
+The program should output:
+
+The minimum and maximum selling price of the car
+The salesperson’s commission range
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    double costOfCar, minimumAddedToCost, maximumAddedToCost;
+    const double FIXED_COMMISSION = 20, PERCENTAGE_COMMISSION = .3 * ;
+
+    return 0;
+}
