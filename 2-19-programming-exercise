@@ -1,0 +1,26 @@
+/*
+Write a program that prompts the user to input:
+
+The number of quarters
+The number of dimes
+The number of nickels.
+The program then outputs:
+
+The total value of the coins in pennies.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int quarters, dimes, nickels;
+
+    cout << "enter the number of quaters, dimes, and nickels there are, ";
+    cin >> quarters >> dimes >> nickels;
+
+    double valueInPennies = ((quarters * .25) + (dimes * .1) + (nickels * .05)) * 100; // multiply by 100 to convert to the penny value
+
+    cout << "The total value of the coins in pennies is " << valueInPennies;
+    return 0;
+}
