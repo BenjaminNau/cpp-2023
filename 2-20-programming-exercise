@@ -22,8 +22,35 @@ The salesperson’s commission range
 using namespace std;
 
 int main() {
-    double costOfCar, minimumAddedToCost, maximumAddedToCost;
-    const double FIXED_COMMISSION = 20, PERCENTAGE_COMMISSION = .3 * ;
+    double costOfCar, minimumAddedToCost, maximumAddedToCost, fixedCommission, 
+    commissionPercentage;
+
+    cout << "What is the purchasing cost of the car? ";
+    cin >> costOfCar;
+
+    cout << "What is the minimum to be added to the purchasing cost? ";
+    cin >> minimumAddedToCost;
+
+    cout << "What is the maximum to be added to the purchasing cost? ";
+    cin >> maximumAddedToCost;
+
+    cout << "What is the salesperson's fixed commission? ";
+    cin >> fixedCommission;
+
+    cout << "What is the percentage of the commission (e.g., 30 for 30%)? ";
+    cin >> commissionPercentage;
+    commissionPercentage /= 100;
+
+    double minimumSellingPrice = costOfCar + minimumAddedToCost;
+    double maximumSellingPrice = costOfCar + maximumAddedToCost;
+
+    double commissionForMin = fixedCommission + commissionPercentage * (minimumSellingPrice - costOfCar);
+    double commissionForMax = fixedCommission + commissionPercentage * (maximumSellingPrice - costOfCar);
+
+    cout << "The minimum selling price of the car is $" << minimumSellingPrice << endl;
+    cout << "The maximum selling price of the car is $" << maximumSellingPrice << endl;
+    cout << "The salesperson's commission when selling at the minimum price is $" << commissionForMin << endl;
+    cout << "The salesperson's commission when selling at the maximum price is $" << commissionForMax << endl;
 
     return 0;
 }
