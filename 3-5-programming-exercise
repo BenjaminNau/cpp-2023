@@ -1,0 +1,89 @@
+/*
+Summary
+Three employees in a company are up for a special pay increase. You are given a file, say Ch3_Ex5Data.txt, with the following data:
+
+Miller Andrew 65789.87 5
+Green Sheila 75892.56 6
+Sethi Amit 74900.50 6.1
+Each input line consists of an employee’s last name, first name, current salary, and percent pay increase.
+
+For example, in the first input line, the last name of the employee is Miller, the first name is Andrew, the current salary is 65789.87, and the pay increase is 5%.
+
+Instructions
+Write a program that reads data from a file specified by the user at runtime (i.e. your program should accept the filename as user input) and stores the output in the file Ch3_Ex5Output.dat. To test your program, use the Ch3_Ex5Data.txt file.
+
+Your program will not pass all checks if it does not accept a filename as input from the user.
+
+For each employee, the data must be output in the following form: firstName lastName updatedSalary.
+
+Format the output of decimal numbers to two decimal places.
+
+Since your program handles currency, make sure to use a data type that can store decimals.
+*/
+
+/*
+Ch3_Ex5Data.txt : 
+Miller Andrew 65789.87 5
+Green Sheila 75892.56 6
+Sethi Amit 74900.50 6.1
+*/
+
+/*
+Ch3_Ex5Output.dat :
+Robert Parker 13333.32
+Harry Longabaugh 100740.74
+Etna Place 79469.43
+*/
+
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    ifstream inFile;  // Input file stream
+    ofstream outFile; // Output file stream
+    string inputFileName;
+    
+    // Prompting the user to enter the input filename
+    cout << "Please enter the input filename: ";
+    cin >> inputFileName;
+
+    // Opening the input and output files
+    inFile.open(inputFileName);
+    outFile.open("Ch3_Ex5Output.dat");
+    
+    // Setting the precision for decimal numbers in the output file
+    outFile << fixed << showpoint << setprecision(2);
+
+    // first employee data
+    string lastName1, firstName1;
+    double currentSalary1, percentPayIncrease1;
+    inFile >> lastName1 >> firstName1 >> currentSalary1 >> percentPayIncrease1;
+    double updatedSalary1 = currentSalary1 + (currentSalary1 * percentPayIncrease1 / 100.0); 
+    outFile << firstName1 << " " << lastName1 << " " << updatedSalary1 << endl;
+
+    // second employee data
+    string lastName2, firstName2;
+    double currentSalary2, percentPayIncrease2;
+    inFile >> lastName2 >> firstName2 >> currentSalary2 >> percentPayIncrease2;
+    double updatedSalary2 = currentSalary2 + (currentSalary2 * percentPayIncrease2 / 100.0);
+    outFile << firstName2 << " " << lastName2 << " " << updatedSalary2 << endl;
+
+    // third employee data
+    string lastName3, firstName3;
+    double currentSalary3, percentPayIncrease3;
+    inFile >> lastName3 >> firstName3 >> currentSalary3 >> percentPayIncrease3;
+    double updatedSalary3 = currentSalary3 + (currentSalary3 * percentPayIncrease3 / 100.0);
+    outFile << firstName3 << " " << lastName3 << " " << updatedSalary3 << endl;
+
+    inFile.close();
+    outFile.close();
+
+    return 0;
+}
+/* 
+you do not need to declare the variables at the top of your code
+*/
