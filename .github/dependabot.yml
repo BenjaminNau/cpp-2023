@@ -1,0 +1,6 @@
+version: 2
+updates:
+  - package-ecosystem: "gitsubmodule"  # or any other relevant ecosystem for C++
+    directory: "/"  # Location of package manifests, assuming it's in the root directory
+    schedule:
+      interval: "weekly"
