@@ -1,0 +1,38 @@
+/*
+Dairy Farm decided to ship milk in containers in the form of cubes rather than cylinders.
+
+Write a program that prompts the user to input:
+
+The radius of the base of a cylindrical container
+The height of the cylindrical container
+The program then outputs:
+
+The side of the cube with the same volume as the cylindrical container with a precision of 2 decimal places.
+You may assume that the value of π = 3.141593.
+
+Format your output with setprecision(2) to ensure the proper number of decimals for testing!
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double radiusOfCylinder, heightOfCylinder, cylinderVolume, cubeSide;
+
+    cout << "what is the base radius and the height of a cylindrical container " << endl;
+
+    cin >> radiusOfCylinder >> heightOfCylinder;
+    cylinderVolume = M_PI * pow(radiusOfCylinder, 2) * heightOfCylinder; 
+    cubeSide = cbrt(cylinderVolume);
+
+    cout << fixed << setprecision(2) << "The side of the cube = " << cubeSide << endl;
+
+    return 0;
+}
+
+/*
+volume of cylinder = pi * (r * r) * h , the cube root of cylinder volume would equal the side of the cube
+*/
