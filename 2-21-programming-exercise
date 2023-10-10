@@ -1,0 +1,41 @@
+/*
+Summary
+Newton’s law states that the force, F, between two bodies of masses M1 and M2 is given by:
+
+Newton's Law
+in which k is the gravitational constant and d is the distance between the bodies. The value of k is approximately 6.67 X 10-8 dyn. cm²/g² .
+
+Instructions
+Write a program that prompts the user to input:
+
+The masses of the bodies
+The distance between the bodies.
+The program then outputs:
+
+The force between the bodies.
+Your program should be able to work with decimals.
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    const double k = 6.67e-8; // gravitational constant: (in dyn. cm^2 / g^2)
+    double massOne, massTwo, distanceBetweenBodies;
+
+    cout << "what are the masses of the two bodies ";
+    cin >> massOne >> massTwo;
+
+    cout << "what is the distance between the bodies ";
+    cin >> distanceBetweenBodies;
+
+    // calculate force
+    double force = k * (massOne * massTwo / pow(distanceBetweenBodies, 2));
+
+    // output
+    cout << "The force between the bodies is: " << force << " dyn." << endl;
+    return 0;
+}
