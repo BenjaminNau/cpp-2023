@@ -1,0 +1,29 @@
+/*
+One metric ton is approximately 2,205 pounds.
+
+Write a program that prompts the user to input:
+
+The amount of rice, in pounds, a bag can hold.
+The program outputs:
+
+The number of bags needed to store one metric ton of rice.
+*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    const double TON = 2205;
+    double poundsRicePerBag;
+
+    cout << "how many pounds of rice can a bag hold? ";
+    cin >> poundsRicePerBag;
+
+    int numberOfBagsNeeded = round(TON / poundsRicePerBag);
+
+    cout << "it takes " << numberOfBagsNeeded << " bags , " << poundsRicePerBag << " pounds per bag, to store one metric ton of rice" << endl;
+
+    return 0;
+}
