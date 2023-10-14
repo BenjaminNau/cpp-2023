@@ -1,0 +1,69 @@
+/*
+A size of a jumbo candy bar with rectangular shape is l x w x h. Due to rising costs of cocoa, the volume of the candy bar is to be reduced by p%.
+
+To accomplish this, the management decided to keep the height of the candy bar the same, and reduce the length and width by the same amount.
+
+For example, if l = 12, w = 7, h = 3, and p = 10, then the new dimension of the candy bar is 11.39 x 6.64 x 3.
+
+Below is an example of how the completed program should work:
+
+Enter the length, width, and height of the candy bar separated by space(s): 12 7 3
+
+Enter the amount of the reduced volume as a percentage: 10
+
+The new dimensions of the candy bar is: 11.38 x 6.64 x 3.00
+Format your output with setprecision(2) to ensure the proper number of decimals for testing!
+*/
+
+#include <iostream>
+#include <iomanip>
+#include <cmath> // for the sqrt function
+
+using namespace std;
+
+int main() {
+    
+    double length, width, height, reducedVolumePercent;
+
+    cout << "Enter the length, width, and height of the candy bar separated by space(s): ";
+    cin >> length >> width >> height;
+
+    cout << "Enter the amount of the reduced volume as a percentage: ";
+    cin >> reducedVolumePercent;
+
+    double reducedHorizontalDimensionPercent = 100 * (1 - sqrt(1 - reducedVolumePercent / 100));
+
+    length = length - (length * reducedHorizontalDimensionPercent / 100);
+    width = width - (width * reducedHorizontalDimensionPercent / 100);
+
+    cout << "The new dimensions of the candy bar is: " << fixed << setprecision(2) << length << " x " << width << " x " << height << endl;    
+    return 0;
+}
+
+/*
+IF YOU ARE CONFUSED ON THE reducedHorizontalDimensionPercent, vvvvvvvvvvvvvvvvvvvvvvvvvv
+
+formula for the volume of a rectangular prism is:
+
+    Volume = l * w * h
+
+height remains constant, and the volume is reduced by p%, the product of the 
+length and the width is also reduced by p%. find new length and width, l' and w':
+
+    l' * w' = l * w * (1 - p/100)
+
+reduce both the length and the width by the same percentage:
+
+    l' = l * (1 - q/100)
+    w' = w * (1 - q/100)
+
+plugging into the modified volume equation, we have:
+
+    l * (1 - q/100) * w * (1 - q/100) = l * w * (1 - p/100)
+
+solving for q:
+
+    q = 100 * (1 - sqrt(1 - p/100))
+
+So, you would decrease both the length and the width by this calculated q% to get the new dimensions of the candy bar.
+*/
