@@ -16,7 +16,7 @@ Write a program that produces the following output:
 
 #include <iostream>
 
-using namespace std;
+using namespace std; // using namespace std allows the use of cout, from the library namespace
 
 int main() {
     cout << "**********************************" << endl;
