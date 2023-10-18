@@ -1,0 +1,69 @@
+/*
+A room has one door, two windows, and a built-in bookshelf and it needs to be painted. Suppose that one gallon of paint can paint 120 square feet.
+
+Write a program that prompts the user to input (in feet):
+
+The length and width of the door
+The length and width of each window
+The length and width of the bookshelf
+The length, width, and height of the room
+The area that can be painted with one gallon of paint
+The program outputs:
+
+The amount of paint needed to paint the walls of the room.
+*/
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    double doorLength, doorWidth;
+    double window1Length, window1Width;
+    double window2Length, window2Width;
+    double bookshelfLength, bookshelfWidth;
+    double roomLength, roomWidth, roomHeight;
+    double paintPerGallonArea;
+
+    cout << "enter the length and width of the door ";
+    cin >> doorLength >> doorWidth;
+
+    cout << "enter the length and width of the first window ";
+    cin >> window1Length >> window1Width;
+
+    cout << "enter the length and width of the second window ";
+    cin >> window2Length >> window2Width;
+
+    cout << "enter the length and width of the bookshelf ";
+    cin >> bookshelfLength >> bookshelfWidth;
+
+    cout << "enter the length, width, and height of the room ";
+    cin >> roomLength >> roomWidth >> roomHeight;
+
+    cout << "enter the area that can be painted with one gallon of paint ";
+    cin >> paintPerGallonArea;
+
+    // calculations
+    double doorArea = doorLength * doorWidth;
+    double window1Area = window1Length * window1Width;
+    double window2Area = window2Length * window2Width;
+    double bookshelfArea = bookshelfLength * bookshelfWidth;
+
+    // area of two long walls
+    double longWallArea = 2 * roomLength * roomHeight;
+
+    // area of two short walls
+    double shortWallArea = 2 * roomWidth * roomHeight;
+
+    // wall area
+    double totalWallArea = longWallArea + shortWallArea;
+
+    // paintable area
+    double paintableArea = totalWallArea - (doorArea + window1Area + window2Area + bookshelfArea);
+
+    // paint needed in gal
+    double paintNeeded = paintableArea / paintPerGallonArea;
+
+    cout << "you will need " << paintNeeded << " gallons of paint to paint the walls of the room" << endl;
+
+    return 0;
+}
