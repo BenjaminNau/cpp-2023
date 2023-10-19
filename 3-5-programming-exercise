@@ -47,15 +47,14 @@ int main() {
     ofstream outFile; // Output file stream
     string inputFileName;
     
-    // Prompting the user to enter the input filename
     cout << "Please enter the input filename: ";
     cin >> inputFileName;
 
-    // Opening the input and output files
+    // open input and output files
     inFile.open(inputFileName);
     outFile.open("Ch3_Ex5Output.dat");
     
-    // Setting the precision for decimal numbers in the output file
+    // precision for decimal numbers in the output file
     outFile << fixed << showpoint << setprecision(2);
 
     // first employee data
