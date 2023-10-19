@@ -45,8 +45,7 @@ int main() {
     // use length and width ratio
     double length = (lengthRatio / widthRatio) * width;
 
-    cout << "length of the patio: " << length << " feet" << endl;
-    cout << "lidth of the patio: " << width << " feet" << endl;
+    cout << "the length of the patio is " << length << " feet " << "and the width of the patio is " << width << " feet" << endl;
 
     return 0;
 }
