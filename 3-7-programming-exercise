@@ -1,0 +1,51 @@
+/*
+Interest on a credit card’s unpaid balance is calculated using the average daily balance.
+
+Suppose that netBalance is the balance shown in the bill, payment is the payment made, d1 is the number of days in the billing cycle, and d2 is the number of days payment is made before billing cycle.
+
+Then, the average daily balance is:
+
+averageDailyBalance = (netBalance * d1 – payment * d2) / d1
+If the interest rate per month is, say, 0.0152, then the interest on the unpaid balance is:
+
+interest = averageDailyBalance * 0.0152 
+Instructions
+Write a program that accepts as input netBalance, d1, payment, d2, and interest rate per month (interestRate).
+
+The program outputs the interest.
+
+Format your output to two decimal places.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double netBalance, d1, payment, d2, interestRate;
+
+    cout << "enter the net balance shown in the bill $";
+    cin >> netBalance;
+
+    cout << "enter the number of days in the billing cycle ";
+    cin >> d1;
+
+    cout << "enter the payment made $";
+    cin >> payment;
+
+    cout << "enter the number of days payment was made before the end of the billing cycle ";
+    cin >> d2;
+
+    cout << "enter the interest rate per month ";
+    cin >> interestRate;
+
+    double averageDailyBalance = (netBalance * d1 - payment * d2) / d1;
+
+    double interest = averageDailyBalance * interestRate;
+
+    cout << fixed << setprecision(2);
+    cout << "interest on the unpaid balance $" << interest << endl;
+
+    return 0;
+}
