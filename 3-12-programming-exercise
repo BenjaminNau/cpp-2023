@@ -1,0 +1,44 @@
+/*
+Two cars A and B leave an intersection at the same time. Car A travels west at an average speed of x miles per hour and car B travels south at an average speed of y miles per hour.
+
+Write a program that prompts the user to enter:
+
+The average speed of both the cars
+The elapsed time (in hours and minutes, separated by a space)
+Ex: For two hours and 30 minutes, 2 30 would be entered
+The program then outputs:
+
+The (shortest) distance between the cars.
+Because your answer should be in decimal format with a precision to at least 2 decimal places, be careful when performing mathematical operations on different data types, it might give you unexpected results.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double x, y;            
+    int hours, minutes;
+    double elapsedTime;
+
+    cout << "enter the average speed of car A ";
+    cin >> x;
+    cout << "enter the average speed of car B ";
+    cin >> y;
+
+    cout << "enter the elapsed time in hours and minutes ";
+    cin >> hours >> minutes;
+    elapsedTime = hours + (minutes / 60.0);
+
+    double distanceA = x * elapsedTime;
+    double distanceB = y * elapsedTime;
+
+    double shortestDistance = sqrt(pow(distanceA, 2) + pow(distanceB, 2));
+
+    cout << fixed << setprecision(2);
+    cout << "the shortest distance between the cars is " << shortestDistance << " miles" << endl;
+
+    return 0;
+}
