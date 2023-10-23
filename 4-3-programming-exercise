@@ -30,6 +30,7 @@ int main() {
     }
     return 0;
 }
+
 /*
 "number - 10" subtracts 10 from the number i.e., when
 number = 10, it becomes 0. 
