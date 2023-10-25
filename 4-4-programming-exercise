@@ -1,0 +1,79 @@
+/*
+The statements in the file main.cpp are in incorrect order.
+
+Rearrange the statements so that they prompt the user to input:
+
+The shape type (rectangle, circle, or cylinder)
+The appropriate dimension of the shape.
+Note: For grading purposes place the cylinder height statement before the radius statement.
+
+The program then outputs the following information about the shape:
+
+For a rectangle, it outputs the area and perimeter
+For a circle, it outputs the area and circumference
+For a cylinder, it outputs the volume and surface area.
+Use 3.1416 as the constant value for any calculations that may need π.
+
+After rearranging the statements, your program should be properly indented.
+*/
+
+#include <cmath>
+#include <iomanip>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    const double PI = 3.1416;
+
+    string shape;
+    double length, width, height, radius;
+
+    // set precision
+    cout << fixed << showpoint << setprecision(2);
+
+    cout << "enter shape type: ";
+    cin >> shape;
+
+    if (shape == "rectangle") {
+        // ask for dimensions
+        cout << "enter the length of the rectangle ";
+        cin >> length;
+
+        cout << "enter the width of the rectangle ";
+        cin >> width;
+
+        // calculate and display the corresponding values
+        cout << "area of the rectangle = " << length * width << endl;
+        cout << "perimeter of the rectangle = " << 2 * (length + width) << endl;
+
+    } else if (shape == "circle") {
+        // ask for dimensions
+        cout << "enter the radius of the circle ";
+        cin >> radius;
+
+        // calculate and display the corresponding values
+        cout << "area of the circle = " << PI * pow(radius, 2.0) << endl;
+        cout << "circumference of the circle = " << 2 * PI * radius << endl;
+
+    } else if (shape == "cylinder") {
+        // ask for dimensions
+        cout << "enter the height of the cylinder ";
+        cin >> height;
+
+        cout << "enter the radius of the base of the cylinder ";
+        cin >> radius;
+
+        // calculate and display the corresponding values
+        cout << "volume of the cylinder = " << PI * pow(radius, 2.0) * height << endl;
+        cout << "surface area of the cylinder: " << 2 * PI * radius * height + 2 * PI * pow(radius, 2.0) << endl;
+
+    } else {
+        // if unknown shape
+        cout << "this program does not handle " << shape << endl;
+    }
+
+    return 0;
+}
+
