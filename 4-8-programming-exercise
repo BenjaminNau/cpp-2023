@@ -1,0 +1,48 @@
+/*
+Write a program that mimics a calculator. The program should take as input:
+
+The first integer
+The second integer
+The operation to be performed (+, -, *, /)
+It should then output the numbers, the operator, and the result. (For division, if the denominator is zero, output an appropriate message. The message should contain the word "error")
+
+Some sample outputs follow:
+
+3 + 4 = 7
+13 * 5 = 65
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int firstInt, secondInt;
+    char operationToBePerformed;
+
+    cout << "input the first integer, the second integer, and the desired operation to be performed (+, -, *, /): ";
+    cin >> firstInt >> secondInt >> operationToBePerformed;
+
+    if(operationToBePerformed == '+') {
+        cout << firstInt << " + " << secondInt << " = " << firstInt + secondInt << endl;
+    }
+    else if(operationToBePerformed == '-') {
+        cout << firstInt << " - " << secondInt << " = " << firstInt - secondInt << endl;
+    }
+    else if(operationToBePerformed == '*') {
+        cout << firstInt << " * " << secondInt << " = " << firstInt * secondInt << endl;
+    }
+    else if(operationToBePerformed == '/') {
+        if(secondInt == 0) {
+            cout << "error: division by zero is not allowed." << endl;
+        }
+        else {
+            cout << firstInt << " / " << secondInt << " = " << firstInt / secondInt << endl; // Note: This will do integer division
+        }
+    }
+    else {
+        cout << "Invalid operation entered." << endl;
+    }
+
+    return 0;
+}
