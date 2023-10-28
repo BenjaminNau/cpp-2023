@@ -1,0 +1,126 @@
+/*
+Redo Programming Exercise 18 of Chapter 2 , taking into account that your parents buy additional savings bonds for you as follows:
+
+a. If you do not spend any money to buy savings bonds, then because you had a summer job, your parents buy savings bonds for you in an amount equal to 1% of the money you save after paying taxes and buying clothes, other accessories, and school supplies.
+
+b. If you were to spend up to 25% of your net income to buy savings bonds, your parents spend $0.25 for each dollar you spend to buy savings bonds. Your parents would also contribute money equal to 1% of the money you would save after paying taxes, buying clothes, other accessories, and school supplies. This does not include net income minus money spent on savings bonds.
+
+c. If you were to spend more than 25% of your net income to buy savings bonds, your parents spend $0.40 for each dollar you spend to buy savings bonds. Your parents would also contribute money equal to 2% of the money you would save after paying taxes, buying clothes, other accessories, and school supplies. This does not include net income minus money spent on savings bonds.
+
+The program should prompt the user to enter:
+
+The pay rate for an hour
+The number of hours you worked each week for a total of 5 weeks.
+The percent of net income spent to buy savings bonds
+The program then outputs the following:
+
+Your income before and after taxes from your summer job.
+
+The money you spend on clothes and other accessories.
+
+The money you spend on school supplies.
+
+The money you spend to buy savings bonds.
+
+The money your parents spend to buy additional savings bonds for you.
+
+An example of the program is shown below:
+
+Enter the per hour pay rate: 10
+
+Enter the number of hours worked for week 1: 15
+
+Enter the number of hours worked for week 2: 15
+
+Enter the number of hours worked for week 3: 20
+
+Enter the number of hours worked for week 4: 15
+
+Enter the number of hours worked for week 5: 20
+
+Enter the percent of net income spent to buy savings bonds: 20
+
+Total Income before tax: $ 850.00
+Net Income: $ 731.00
+Money spent on clothes and other accessories: $ 73.10
+Money spent on school supplies: $ 7.31
+Money spent to buy savings bonds: $ 146.20
+Money spent by parents to buy additional savings bonds: $ 43.06
+Since your program handles currency, make sure to use a data type that can store decimals with a decimal precision of 2.
+
+Instructions for Programming Exercise 18 of Chapter 2 have been posted below for your convenience.
+
+Exercise 18
+You found an exciting summer job for five weeks. It pays, say, $15.50 per hour. Suppose that the total tax you pay on your summer job income is 14%.
+
+After paying the taxes, you spend 10% of your net income to buy new clothes and other accessories for the next school year and 1% to buy school supplies.
+
+After buying clothes and school supplies, you use 25% of the remaining money to buy savings bonds. For each dollar you spend to buy savings bonds, your parents spend $0.50 to buy additional savings bonds for you.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double pay;
+    double hours[5]; // create an array composed of 5 double variables
+
+    cout << fixed << setprecision(2);
+
+    cout << "enter the per hour pay rate ";
+    cin >> pay;
+
+    for (int i = 0; i < 5; i++) {
+        cout << "enter the number of hours worked for week " << i + 1 << " ";
+        cin >> hours[i];
+    }
+
+    double savingBondPerc;
+
+    cout << "enter the percent of net income spent to buy savings bonds ";
+    cin >> savingBondPerc;
+
+    double totalHours = 0;
+    for (int i = 0; i < 5; i++)
+        totalHours += hours[i];
+
+    double totalIncome = totalHours * pay;
+    cout << "total income before tax $" << totalIncome << endl;
+
+    double tax = totalIncome * 14 / 100;
+
+    double netIncome = totalIncome - tax;
+    cout << "net income $" << netIncome << endl;
+
+    double expenseOnClothes = netIncome * 10 / 100;
+    cout << "money spent on clothes and other accessories $ " << expenseOnClothes << endl;
+
+    double expenseOnSchool = netIncome * 1 / 100;
+    cout << "money spent on school supplies $ " << expenseOnSchool << endl;
+
+    double expenseOnSavingBonds = netIncome * savingBondPerc / 100;
+    cout << "money spent to buy savings bonds $ " << expenseOnSavingBonds << endl;
+
+    double moneyLeft = netIncome - expenseOnClothes - expenseOnSchool;
+    
+    double parentsShare;
+
+    if (savingBondPerc == 0) // no spend on bonds
+    {
+        parentsShare = moneyLeft * 1 / 100;
+    }
+    else if (savingBondPerc <= 25) // up to 25% spend in bonds
+    {
+        parentsShare = expenseOnSavingBonds * 0.25 + moneyLeft * 1 / 100;
+    }
+    else // more than 25% spend in bonds
+    {
+        parentsShare = expenseOnSavingBonds * 0.4 + moneyLeft * 2 / 100;
+    }
+
+    cout << "money spent by parents to buy additional savings bonds $ " << parentsShare << endl;
+
+    return 0;
+}
