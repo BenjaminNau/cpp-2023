@@ -31,7 +31,7 @@ int main() {
 
     // Display the result
     cout << "total boxes " << fullBoxes << endl;
-    cout << "total containers " << fullContainers << endl;
+    cout << "total containers " << fullContainers << endl; // to get the actual assignment correct, you will have to switch lines 34 and 35's places 
     cout << "leftover cookies " << leftoverCookies << endl;
     cout << "leftover boxes " << leftoverBoxes << endl;
 
