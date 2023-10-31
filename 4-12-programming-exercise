@@ -22,19 +22,41 @@ Since your program handles currency, make sure to use a data type that can store
 */
 
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 int main() {
-    double billingAmount, paymentAmount;
-    double creditAmount = 0.0;
-    double penaltyAmount = 0.0;
-    double unpaidBalance = 0.0;
+    cout << fixed << setprecision(2);
 
-    cout << "enter the billing amount ";
+    double billingAmount, paymentAmount, balance, penalty, credit;
+
+    cout << "Enter the billing amount: ";
     cin >> billingAmount;
 
-    
-    
+    cout << "Enter the payment amount: ";
+    cin >> paymentAmount;
+
+    // if the full amount is paid
+    if (paymentAmount == billingAmount) {
+        credit = (billingAmount * 0.01 < 10) ? billingAmount * 0.01 : 10;
+        cout << "Thank you for paying the full amount." << endl;
+        cout << "You will receive $" << credit << " credit on your next bill." << endl;
+    } else {
+
+        balance = billingAmount - paymentAmount;
+
+        if (paymentAmount >= 0.5 * billingAmount) {
+            penalty = 0.05 * balance;
+        } else if (paymentAmount >= 0.2 * billingAmount && paymentAmount < 0.5 * billingAmount) {
+            penalty = 0.10 * balance;
+        } else {
+            penalty = 0.20 * balance;
+        }
+
+        cout << "The penalty added to the next bill is: $" << penalty << endl;
+        cout << "The unpaid balance including the penalty is: $" << balance + penalty << endl;
+    }
+
     return 0;
 }
