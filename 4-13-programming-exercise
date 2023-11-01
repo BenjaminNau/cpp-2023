@@ -25,54 +25,52 @@ An 's' or 'S' if the lines are single-spaced, or a 'd' or 'D' if the lines are d
 using namespace std;
 
 int main() {
-    // Define the variables
+
     double paperLength, paperWidth;
     double topMargin, bottomMargin, leftMargin, rightMargin;
     double pointSize;
     char spacing;
     int charactersPerLine, linesPerPage, linesPerPageSingleSpaced;
-    
-    // Get user input
-    cout << "Enter the length and width of the paper in inches: ";
+
+    cout << "enter the length and width of the paper in inches: ";
     cin >> paperLength >> paperWidth;
     
-    cout << "Enter the left, right, top, and bottom margins in inches: ";
+    cout << "enter the left, right, top, and bottom margins in inches: ";
     cin >> leftMargin >> rightMargin >> topMargin >> bottomMargin;
     
-    cout << "Enter the point size of a line: ";
+    cout << "enter the point size of a line: ";
     cin >> pointSize;
     
-    cout << "Enter 's' for single-spaced or 'd' for double-spaced lines: ";
+    cout << "enter 's' for single-spaced or 'd' for double-spaced lines: ";
     cin >> spacing;
-    
-    // Convert margins to points
+
+
+    // note that 1 inch = 72 points
     double leftMarginPoints = leftMargin * 72;
     double rightMarginPoints = rightMargin * 72;
     double topMarginPoints = topMargin * 72;
     double bottomMarginPoints = bottomMargin * 72;
-    
-    // Calculate the printable width and height in points
+
+
     double printableWidth = paperWidth * 72 - leftMarginPoints - rightMarginPoints;
     double printableHeight = paperLength * 72 - topMarginPoints - bottomMarginPoints;
     
-    // Calculate the number of characters per line
+
     charactersPerLine = static_cast<int>(printableWidth / pointSize);
     
-    // Calculate the number of lines per page for single spaced
     linesPerPageSingleSpaced = static_cast<int>(printableHeight / pointSize);
     
-    // Adjust the point size if double-spaced
+    // if user input double space, adjust point size
     if (spacing == 'd' or spacing == 'D') {
         pointSize *= 2;
     }
     
-    // Calculate the number of lines per page with current spacing
     linesPerPage = static_cast<int>(printableHeight / pointSize);
     
-    // Output the result
+
     cout << "Characters per line: " << charactersPerLine << endl;
     cout << "Lines per page: " << linesPerPage << endl;
-    // Only output the single spaced value if double spaced was chosen
+    // only output the single spaced value if double spaced was chosen
     if(spacing == 'd' or spacing == 'D') {
         cout << "Lines per page (if single-spaced): " << linesPerPageSingleSpaced << endl;
     }
