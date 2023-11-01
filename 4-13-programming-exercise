@@ -68,11 +68,11 @@ int main() {
     linesPerPage = static_cast<int>(printableHeight / pointSize);
     
 
-    cout << "Characters per line: " << charactersPerLine << endl;
-    cout << "Lines per page: " << linesPerPage << endl;
+    cout << "characters per line: " << charactersPerLine << endl;
+    cout << "lines per page: " << linesPerPage << endl;
     // only output the single spaced value if double spaced was chosen
     if(spacing == 'd' or spacing == 'D') {
-        cout << "Lines per page (if single-spaced): " << linesPerPageSingleSpaced << endl;
+        cout << "lines per page (if single-spaced): " << linesPerPageSingleSpaced << endl;
     }
     
     return 0;
