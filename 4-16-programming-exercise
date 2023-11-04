@@ -1,0 +1,78 @@
+/*
+A new author is in the process of negotiating a contract for a new romance novel. The publisher is offering three options.
+
+In the first option, the author is paid $5,000 upon delivery of the final manuscript and $20,000 when the novel is published.
+In the second option, the author is paid 12.5% of the net price of the novel for each copy of the novel sold.
+In the third option, the author is paid 10% of the net price for the first 4,000 copies sold, and 14% of the net price for the copies sold over 4,000.
+The author has some idea about the number of copies that will be sold and would like to have an estimate of the royalties generated under each option.
+
+Instructions
+Write a program that prompts the author to enter:
+
+The estimated number of copies that will be sold.
+The net price of each copy of the novel
+The program then outputs:
+
+The royalties under each option
+The best option the author could choose.
+Ex. If option 1 is the best, output Option 1 is the best
+(Use appropriate named constants to store the special values such as royalty rates and fixed royalties.)
+
+Since your program handles currency, make sure to use a data type that can store decimals with a decimal precision of 2.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+const double OPTION_ONE_UPFRONT = 5000;
+const double OPTION_ONE_FINAL = 20000;
+const double OPTION_TWO_ROYALTY_RATE = 0.125;
+const double OPTION_THREE_INITIAL_RATE = 0.10;
+const double OPTION_THREE_ADDITIONAL_RATE = 0.14;
+const int OPTION_THREE_THRESHOLD = 4000;
+
+int main() {
+    cout << fixed << setprecision(2);
+
+    int estimatedNumberOfCopiesSold;
+    double netPrice;
+
+    cout << "enter the estimated number of copies that will be sold: ";
+    cin >> estimatedNumberOfCopiesSold;
+
+    cout << "enter the net price of each copy of the novel: ";
+    cin >> netPrice;
+
+    double optionOneRoyalty = OPTION_ONE_UPFRONT + OPTION_ONE_FINAL;
+
+    double optionTwoRoyalty = estimatedNumberOfCopiesSold * netPrice * OPTION_TWO_ROYALTY_RATE;
+    
+    double optionThreeRoyalty = 0;
+
+    if (estimatedNumberOfCopiesSold <= OPTION_THREE_THRESHOLD) {
+        optionThreeRoyalty = estimatedNumberOfCopiesSold * netPrice * OPTION_THREE_INITIAL_RATE;
+    } else {
+        optionThreeRoyalty = (OPTION_THREE_THRESHOLD * netPrice * OPTION_THREE_INITIAL_RATE) + ((estimatedNumberOfCopiesSold - OPTION_THREE_THRESHOLD) * netPrice * OPTION_THREE_ADDITIONAL_RATE);
+    }
+
+    cout << "royalties under each option:" << endl;
+    cout << "option 1: $" << optionOneRoyalty << endl;
+    cout << "option 2: $" << optionTwoRoyalty << endl;
+    cout << "option 3: $" << optionThreeRoyalty << endl;
+
+    // best option
+    double maxRoyalty = max(max(optionOneRoyalty, optionTwoRoyalty), optionThreeRoyalty);
+    cout << "the best option the author could choose: ";
+
+    if (maxRoyalty == optionOneRoyalty) {
+        cout << "option 1 is the best" << endl;
+    } else if (maxRoyalty == optionTwoRoyalty) {
+        cout << "option 2 is the best" << endl;
+    } else {
+        cout << "option 3 is the best" << endl;
+    }
+
+    return 0;
+}
