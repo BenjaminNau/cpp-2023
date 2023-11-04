@@ -1,0 +1,92 @@
+/*
+Write a program to implement the algorithm that you designed in Exercise 20 of Chapter 1. (Assume that the account balance is stored in the file Ch4_Ex15_Data.txt.)
+
+Instructions to Exercise 20 of Chapter 1 have been posted below for your convenience.
+
+Exercise 20
+An ATM allows a customer to withdraw a maximum of $500 per day. If a customer withdraws more than $300, the service charge is 4% of the amount over $300. 
+If the customer does not have sufficient money in the account, the ATM informs the customer about the insufficient funds and gives the customer the option to withdraw the money for a service charge of $25.00. 
+If there is no money in the account or if the account balance is negative, the ATM does not allow the customer to withdraw any money. If the amount to be withdrawn is greater than $500, the ATM informs the customer about the maximum amount that can be withdrawn. 
+Write an algorithm that allows the customer to enter the amount to be withdrawn. The algorithm then checks the total amount in the account, dispenses the money to the customer, and debits the account by the amount withdrawn and the service charges, if any.
+
+Your program should output account balance before and after withdrawal and service charges. Also save the account balance after withdrawal in the file Ch4_Ex15_Output.txt.
+
+Ensure the output in Ch4_Ex15_Output.txt is accurate to two decimal places.
+*/
+
+Ch4_Ex15_Data.txt : 
+750
+
+Ch4_Ex15_Output.txt :
+450.00
+
+main.cpp :
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    // open input and output files
+    ifstream inFile("Ch4_Ex15_Data.txt");
+    ofstream outFile("Ch4_Ex15_Output.txt");
+
+    double balance;
+    inFile >> balance;
+    inFile.close();
+
+    cout << fixed << setprecision(2);
+    cout << "current account balance $" << balance << endl;
+
+    cout << "enter the amount being withdrawn $";
+    double amount;
+    cin >> amount;
+
+    if (balance <= 0) {
+        cout << "there isnt enough money in the acc to withdraw" << endl;
+        outFile << fixed << setprecision(2) << balance;
+        outFile.close();
+        return 0;
+    }
+
+    if (amount > 500) {
+        cout << "An ATM allows a customer to withdraw a maximum of $500 per day." << endl;
+    } 
+    else {
+        double serviceCharge = 0.0;
+        if (amount > 300) {
+            serviceCharge = (amount - 300) * 0.04;
+        }
+
+        if (amount + serviceCharge > balance) {
+            cout << "there are insufficient funds, do you want to withdraw $" << amount << " for a service charge of $25.00? (1 / 0 ): ";
+            int choice;
+            cin >> choice;
+            if (choice == 1) {
+                serviceCharge = 25.0;
+                if (amount + serviceCharge > balance) {
+                    cout << "after the service charge you dont have enough funds to withdraw this amount" << endl;
+                } 
+                else {
+                    balance -= (amount + serviceCharge);
+                    cout << "withdrawn $" << amount << endl;
+                    cout << "service charge $" << serviceCharge << endl;
+                }
+            }
+        } 
+        else {
+            balance -= (amount + serviceCharge);
+            cout << "withdrawn $" << amount << endl;
+            cout << "service charge $" << serviceCharge << endl;
+        }
+    }
+
+    cout << "updated account balance $" << balance << endl;
+    
+    outFile << fixed << setprecision(2) << balance;
+    
+    outFile.close();
+
+    return 0;
+}
