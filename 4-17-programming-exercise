@@ -1,0 +1,82 @@
+/*
+Samantha and Vikas are looking to buy a house in a new development. After looking at various models, the three models they like are colonial, split-entry, and single-story.
+
+The builder gave them the base price and the finished area in square feet of the three models. They want to know the model(s) with the least price per square foot.
+
+Instructions
+Write a program that accepts as input the base price and the finished area in square feet of the three models.
+
+The program outputs the model(s) with the least price per square foot in the following format:
+
+If the colonial model is the least price, output:
+
+The price per square foot of the colonial model is the least.
+If the split-entry model is the least price, output:
+
+The price per square foot of the split-entry model is the least.
+If the single-story model is the least price, output:
+
+The price per square foot of the single-story model is the least.
+If the colonial and split-entry models tie for the least price, output:
+
+The price per square foot of the colonial and split-entry models tie for the least.
+If the colonial and single-story models tie for the least price, output:
+
+The price per square foot of the colonial and single-story models tie for the least.
+If the single-story and split-entry models tie for the least price, output:
+
+The price per square foot of the single-story and split-entry models tie for the least.
+Finally, if all three tie for the least price, output:
+
+The price per square foot all three models are the same.
+*/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double colonialPrice, splitEntryPrice, singleStoryPrice;
+    double colonialArea, splitEntryArea, singleStoryArea;
+
+    // colonial
+    cout << "enter the base price of the colonial model: ";
+    cin >> colonialPrice;
+    cout << "enter the finished area for the colonial model: ";
+    cin >> colonialArea;
+
+    // split entry
+    cout << "enter the base price of the split-entry model: ";
+    cin >> splitEntryPrice;
+    cout << "enter the finished area for the split-entry model: ";
+    cin >> splitEntryArea;
+
+    // single story
+    cout << "enter the base price of the single-story model: ";
+    cin >> singleStoryPrice;
+    cout << "enter the finished area for the single-story model: ";
+    cin >> singleStoryArea;
+
+
+    double colonialPPSF = colonialPrice / colonialArea;
+    double splitEntryPPSF = splitEntryPrice / splitEntryArea;
+    double singleStoryPPSF = singleStoryPrice / singleStoryArea;
+
+    if (colonialPPSF == splitEntryPPSF && colonialPPSF == singleStoryPPSF) {
+        cout << "The price per square foot all three models are the same." << endl;
+    } else if (colonialPPSF < splitEntryPPSF && colonialPPSF < singleStoryPPSF) {
+        cout << "The price per square foot of the colonial model is the least." << endl;
+    } else if (splitEntryPPSF < colonialPPSF && splitEntryPPSF < singleStoryPPSF) {
+        cout << "The price per square foot of the split-entry model is the least." << endl;
+    } else if (singleStoryPPSF < colonialPPSF && singleStoryPPSF < splitEntryPPSF) {
+        cout << "The price per square foot of the single-story model is the least." << endl;
+    } else if (colonialPPSF == splitEntryPPSF && colonialPPSF < singleStoryPPSF) {
+        cout << "The price per square foot of the colonial and split-entry models tie for the least." << endl;
+    } else if (colonialPPSF == singleStoryPPSF && colonialPPSF < splitEntryPPSF) {
+        cout << "The price per square foot of the colonial and single-story models tie for the least." << endl;
+    } else if (splitEntryPPSF == singleStoryPPSF && splitEntryPPSF < colonialPPSF) {
+        cout << "The price per square foot of the single-story and split-entry models tie for the least." << endl;
+    }
+
+    return 0;
+}
