@@ -1,0 +1,49 @@
+/*
+One way to determine how healthy a person is, is by measuring the body fat of the person. The formulas to determine the body fat for female and male are as follows:
+
+Body fat formula for women:
+
+A1 = (body weight X 0.732) + 8.987
+A2 = wrist measurement (at fullest point) / 3.140
+A3 = waist measurement (at navel) X 0.157
+A4 = hip measurement (at fullest point) X 0.249
+A5 = forearm measurement (at fullest point) X 0.434
+B = A1 + A2 - A3 - A4 + A5
+Body fat = body weight - B
+Body fat percentage = body fat X 100 / body weight
+Body fat formula for men:
+
+A1 = (body weight X 1.082) + 94.42
+A2 = waist measurement X 4.15
+B = A1 - A2
+Body fat = body weight - B
+Body fat percentage = body fat X 100 / body weight
+Instructions
+Write a program to calculate the body fat of a person. Prompt the user to input:
+
+Their gender ('m' or 'M' for male, 'f' or 'F' for female)
+If male was entered, additionally prompt the user to input:
+
+Their body weight (in pounds)
+Their waist measurement at fullest point (in inches)
+If female was entered, additionally prompt the user to input:
+
+Their body weight (in pounds)
+Their wrist measurement at fullest point (in inches)
+Their waist measurement at navel (in inches)
+Their hip measurement at fullest point (in inches)
+Their forearm measurement at fullest point (in inches)
+The program then outputs:
+
+Body fat
+Body fat percentage
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Write your main here
+    return 0;
+}
