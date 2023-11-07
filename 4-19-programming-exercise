@@ -1,0 +1,24 @@
+/*
+Ron bought several acres of farm to grow and sell vegetables. Suppose that Ron wants to grow a maximum of two types of vegetables.
+
+Write a program that prompts Ron or the user to do the following:
+
+Enter the total farm area in acres.
+The number of vegetables (one or two) that the user wants to grow.
+If the user wants to grow two types of vegetables, then prompt the user to enter the portion (as a percentage) of land used for the first vegetable.
+Enter the seed cost, plantation cost, fertilizing cost, labor cost, and selling price per acre.
+If the user specified 2 vegetables, prompt the user to enter the items in step 4 for the second vegetable.
+The program then outputs
+
+The total revenue.
+The profit/loss.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    // Write your main here
+    return 0;
+}
