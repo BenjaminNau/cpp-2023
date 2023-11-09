@@ -1,0 +1,54 @@
+/*
+The first 11 prime integers are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31.
+
+A positive integer between 1 and 1000 (inclusive), other than the first 11 prime integers, is prime if it is not divisible by 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31.
+
+Instructions
+Write a program that prompts the user to enter a positive integer between 1 and 1000 (inclusive) and that outputs whether the number is prime.
+
+If the number is not prime, then output all the numbers, from the list of the first 11 prime integers, which divide the number.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int number;
+    int first11Primes[11] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31}; // [11] is the size of the array
+    bool isPrime = true;
+
+    cout << "Enter a positive integer between 1 and 1000 ";
+    cin >> number;
+
+    //if the number is among the first 11 primes
+    for (int i = 0; i < 11; i++) {
+        if (number == first11Primes[i]) {
+            cout << number << " is prime." << endl;
+            return 0;
+        }
+    }
+
+    //if the number is divisible
+    for (int i = 0; i < 11; i++) {
+        if (number % first11Primes[i] == 0) {
+            isPrime = false;
+        }
+    }
+
+    if (isPrime == true) {
+        cout << number << " is prime." << endl;
+    } 
+    else {
+        cout << number << " is not prime. It is divisible by ";
+        for (int i = 0; i < 11; i++) {
+            if (number % first11Primes[i] == 0) {
+                cout << first11Primes[i] << " ";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+// use for loops
