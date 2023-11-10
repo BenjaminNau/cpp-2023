@@ -44,6 +44,9 @@ Body fat percentage
 using namespace std;
 
 int main() {
-    // Write your main here
+    double A1 = (bodyWeight * .732) + 8.987;
+    double A2 = wristMeasurement / 3.140;
+    double A3 = waistMeasurement * .157;
+    double A4 = hipMeasurement
     return 0;
 }
