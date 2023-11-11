@@ -45,7 +45,7 @@ using namespace std;
 
 int main() {
     double bodyWeight, bodyFat, bodyFatPercentage;
-    double wristMeasurement, waistMeasurement, 
+    double wristMeasurement, waistMeasurement, hipMeasurement, forearmMeasurement;
 
 
     double A1 = (bodyWeight * .732) + 8.987;
