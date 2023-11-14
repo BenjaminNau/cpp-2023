@@ -56,6 +56,14 @@ int main() {
     double B = A1 + A2 - A3 - A4 + A5;
     double bodyFat = bodyWeight - B;
     double bodyFatPercentage = (bodyFat * 100) / bodyWeight;
+
+    char genderAtBirth;
+    cout << "enter your gender at birth";
+    cin >> genderAtBirth;
+
+    // include tolowercase to take in desired values, also make sure to include the respective library that includes said function
+
+    if(genderAtBirth == 
     return 0;
 }
 
