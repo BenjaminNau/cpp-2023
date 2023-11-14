@@ -1,0 +1,30 @@
+/*
+Write a program that prompts the user to enter two integers.
+
+The program outputs how many numbers are multiples of 3 and how many numbers are multiples of 5 between the two integers (inclusive)
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, numberOfMultiplesOfThree = 0, numberOfMultiplesOfFive = 0;
+
+    cout << "Enter two integers: ";
+    cin >> num1 >> num2;
+
+    if (num2 < num1) { // include the swap statement to make sure that num1 is always <= num2
+        swap(num1, num2);
+    }
+
+    for (int i = num1; i <= num2; i++) {
+        if (i % 3 == 0) numberOfMultiplesOfThree++; // divisible by 3
+
+        if (i % 5 == 0) numberOfMultiplesOfFive++; // divisbile by 5
+    }
+
+    cout << "The number of multiples of 3 between the two integers: " << numberOfMultiplesOfThree << endl;
+    cout << "The number of multiples of 5 between the two integers: " << numberOfMultiplesOfFive << endl;
+
+    return 0;
+}
