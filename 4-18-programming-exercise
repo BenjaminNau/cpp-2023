@@ -40,30 +40,58 @@ Body fat percentage
 */
 
 #include <iostream>
+#include <cctype>  // For tolower function
 
 using namespace std;
 
 int main() {
-    double bodyWeight, bodyFat, bodyFatPercentage;
-    double wristMeasurement, waistMeasurement, hipMeasurement, forearmMeasurement;
+    char gender;
+    double bodyWeight, wristMeasurement, waistMeasurement, hipMeasurement, forearmMeasurement;
+    double bodyFat, bodyFatPercentage;
 
+    cout << "Enter your gender (m/f): ";
+    cin >> gender;
+    gender = tolower(gender);
 
-    double A1 = (bodyWeight * .732) + 8.987;
-    double A2 = wristMeasurement / 3.140;
-    double A3 = waistMeasurement * .157;
-    double A4 = hipMeasurement * .249;
-    double A5 = forearmMeasurement * .434;
-    double B = A1 + A2 - A3 - A4 + A5;
-    double bodyFat = bodyWeight - B;
-    double bodyFatPercentage = (bodyFat * 100) / bodyWeight;
+    cout << "Enter your body weight (in pounds): ";
+    cin >> bodyWeight;
 
-    char genderAtBirth;
-    cout << "enter your gender at birth";
-    cin >> genderAtBirth;
+    if(gender == 'm') {
+        cout << "Enter your waist measurement at fullest point (in inches): ";
+        cin >> waistMeasurement;
 
-    // include tolowercase to take in desired values, also make sure to include the respective library that includes said function
+        double A1 = (bodyWeight * 1.082) + 94.42;
+        double A2 = waistMeasurement * 4.15;
+        double B = A1 - A2;
+        bodyFat = bodyWeight - B;
 
-    if(genderAtBirth == 
+    } else if(gender == 'f') {
+        cout << "Enter your wrist measurement at fullest point (in inches): ";
+        cin >> wristMeasurement;
+        cout << "Enter your waist measurement at navel (in inches): ";
+        cin >> waistMeasurement;
+        cout << "Enter your hip measurement at fullest point (in inches): ";
+        cin >> hipMeasurement;
+        cout << "Enter your forearm measurement at fullest point (in inches): ";
+        cin >> forearmMeasurement;
+
+        double A1 = (bodyWeight * 0.732) + 8.987;
+        double A2 = wristMeasurement / 3.140;
+        double A3 = waistMeasurement * 0.157;
+        double A4 = hipMeasurement * 0.249;
+        double A5 = forearmMeasurement * 0.434;
+        double B = A1 + A2 - A3 - A4 + A5;
+        bodyFat = bodyWeight - B;
+
+    } else {
+        cout << "Invalid gender entered!" << endl;
+        return 1;
+    }
+
+    bodyFatPercentage = (bodyFat * 100) / bodyWeight;
+
+    cout << "Body fat: " << bodyFat << " pounds" << endl;
+    cout << "Body fat percentage: " << bodyFatPercentage << "%" << endl;
+
     return 0;
 }
-
