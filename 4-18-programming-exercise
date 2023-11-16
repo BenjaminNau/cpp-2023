@@ -49,15 +49,15 @@ int main() {
     double bodyWeight, wristMeasurement, waistMeasurement, hipMeasurement, forearmMeasurement;
     double bodyFat, bodyFatPercentage;
 
-    cout << "Enter your gender (m/f): ";
+    cout << "enter your gender (m/f): ";
     cin >> gender;
     gender = tolower(gender);
 
-    cout << "Enter your body weight (in pounds): ";
+    cout << "enter your body weight (in pounds): ";
     cin >> bodyWeight;
 
     if(gender == 'm') {
-        cout << "Enter your waist measurement at fullest point (in inches): ";
+        cout << "enter your waist measurement at fullest point (in inches): ";
         cin >> waistMeasurement;
 
         double A1 = (bodyWeight * 1.082) + 94.42;
@@ -66,13 +66,13 @@ int main() {
         bodyFat = bodyWeight - B;
 
     } else if(gender == 'f') {
-        cout << "Enter your wrist measurement at fullest point (in inches): ";
+        cout << "enter your wrist measurement at fullest point (in inches): ";
         cin >> wristMeasurement;
-        cout << "Enter your waist measurement at navel (in inches): ";
+        cout << "enter your waist measurement at navel (in inches): ";
         cin >> waistMeasurement;
-        cout << "Enter your hip measurement at fullest point (in inches): ";
+        cout << "enter your hip measurement at fullest point (in inches): ";
         cin >> hipMeasurement;
-        cout << "Enter your forearm measurement at fullest point (in inches): ";
+        cout << "enter your forearm measurement at fullest point (in inches): ";
         cin >> forearmMeasurement;
 
         double A1 = (bodyWeight * 0.732) + 8.987;
@@ -90,8 +90,8 @@ int main() {
 
     bodyFatPercentage = (bodyFat * 100) / bodyWeight;
 
-    cout << "Body fat: " << bodyFat << " pounds" << endl;
-    cout << "Body fat percentage: " << bodyFatPercentage << "%" << endl;
+    cout << "body fat: " << bodyFat << " pounds" << endl;
+    cout << "body fat percentage: " << bodyFatPercentage << "%" << endl;
 
     return 0;
 }
