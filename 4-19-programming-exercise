@@ -19,6 +19,28 @@ The profit/loss.
 using namespace std;
 
 int main() {
-    // Write your main here
+    double acres;
+    double numVegetables;
+    double portionForFirstVegetable;
+    double seedCost, plantationCost, fertilizingCost, laborCost >> acreSellingPrice;
+
+    cout << "enter the total farm area in acres: ";
+    cin >> acres;
+
+    cout << "enter the number of vegetables (one or two) that you want to grow : ";
+    cin >> numVegetables;
+
+    if(numVegetables == 2){
+      cout << "enter the portion (as a percentage) of land used for the first vegetable : ";
+      cin >> portionForFirstVegetable;
+    }
+
+    cout << "enter the seed cost, plantation cost, fertilizing cost, labor cost, and selling price per acre : ";
+    cin >> seedCost >> plantationCost >> fertilizingCost >> laborCost >> acreSellingPrice;
+
+    if(numVegetables == 2){
+      cout << "enter the seed cost, plantation cost, fertilizing cost, labor cost, and selling price per acre for the second vegetable : "
+    }
     return 0;
 }
+
