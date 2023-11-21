@@ -22,7 +22,7 @@ int main() {
     double acres;
     double numVegetables;
     double portionForFirstVegetable;
-    double seedCost, plantationCost, fertilizingCost, laborCost >> acreSellingPrice;
+    double seedCost, plantationCost, fertilizingCost, laborCost, acreSellingPrice;
 
     cout << "enter the total farm area in acres: ";
     cin >> acres;
