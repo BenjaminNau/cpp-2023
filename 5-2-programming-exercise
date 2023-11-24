@@ -1,0 +1,37 @@
+/*
+The value of π can be approximated by using the following series : (Leibniz formula for pi)
+
+Series to approximate pi
+The program in main.cpp uses this series to find the approximate value of π. However, the statements are in the incorrect order, and there is also a bug in this program.
+
+Rearrange the statements and remove the bug so that this program can be used to approximate π.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    double pi = 0.0;
+    long n;
+
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    for (long i = 0; i < n; ++i)
+    {
+        if (i % 2 == 0)
+            pi += 1.0 / (2 * i + 1);
+        else
+            pi -= 1.0 / (2 * i + 1);
+    }
+
+    pi = 4 * pi;
+    
+    cout << setprecision(6);
+    cout << endl << "pi = " << pi << endl;
+    
+    return 0;
+}
