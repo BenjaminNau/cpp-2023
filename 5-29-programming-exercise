@@ -1,0 +1,30 @@
+/*
+Let n be a nonnegative integer. The factorial of n, written n!, is defined by 0! = 1, n! = 1·2·3· · ·n if n ≥ 1. For example, 4! = 1·2·3·4 = 24.
+
+Write a program that prompts the user to enter a nonnegative integer and outputs the factorial of the number.
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int number;
+    int result = 1;
+
+    cout << "enter a nonnegative integer : ";
+    cin >> number;
+
+    if (number < 0) {
+        cout << "please enter a nonnegative integer : " << endl;
+    }
+    
+    else {
+        for (int i = 1; i <= number; i++) {
+            result *= i;
+        }
+        cout << number << "! = " << result << endl;
+    }
+
+    return 0;
+}
