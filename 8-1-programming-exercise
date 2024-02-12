@@ -17,9 +17,8 @@ An example of the program output is shown below:
 
 using namespace std;
 
-int main() {
+int main() { 
     double alpha[50];
-    int i;
 
     for(int i = 0; i < 25; i++) {
         alpha[i] = pow(i, 2);
@@ -29,13 +28,10 @@ int main() {
         alpha[i] = i * 3;
     }
 
-   for(int i = 0; i < 50; i++) {
-        cout << alpha[i];
-        if ((i + 1) % 10 == 0)
+    for(int i = 0; i < 50; i++) {
+        cout << alpha[i] << " ";
+        if((i + 1) % 10 == 0) {
             cout << endl;
-        else
-            cout << " ";
+        }
     }
-
-    return 0;
 }
